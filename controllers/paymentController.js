@@ -9,7 +9,13 @@ const confirmation = (req, res) => {
 
 const notification = (req, res) => {
   console.log("Je reçois la notification");
-  console.log(req.body);
+  res.send(`
+    <html>
+      <body>
+        <pre>${JSON.stringify(req.body, null, 2)}</pre>
+      </body>
+    </html>
+  `);
   res.json({ ok: true, message: "Notification reçue" });
 };
 
