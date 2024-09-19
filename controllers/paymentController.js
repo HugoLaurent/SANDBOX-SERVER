@@ -1,6 +1,6 @@
 const payment = require("../json/payfip.js");
 
-const confirmation = (req, res) => {
+const notification = (req, res) => {
   console.log("Je reçois la notification");
   console.log(req.body);
 
@@ -8,7 +8,7 @@ const confirmation = (req, res) => {
 };
 
 const redirection = (req, res) => {
-  console.log("Je reçois la notification");
+  console.log("Je reçois la redirection");
   res.send(`
     <html>
       <body>
@@ -16,31 +16,31 @@ const redirection = (req, res) => {
       </body>
     </html>
   `);
-  res.json({ ok: true, message: "Notification reçue" });
+  res.json({ ok: true, message: "Redirection reçue" });
 };
 
-const checkPayment = (req, res) => {
-  console.log("Je check le paiement");
+// const checkPayment = (req, res) => {
+//   console.log("Je check le paiement");
 
-  const data = req.query.data;
+//   const data = req.query.data;
 
-  const formData = JSON.parse(decodeURIComponent(data));
-  console.log(formData.date.slice(0, 4));
+//   const formData = JSON.parse(decodeURIComponent(data));
+//   console.log(formData.date.slice(0, 4));
 
-  console.log(formData);
+//   console.log(formData);
 
-  const findPayment = payment.find(
-    (pay) => pay.REFDET === formData.refdet && pay.MONTANT === formData.montant
-  );
+//   const findPayment = payment.find(
+//     (pay) => pay.REFDET === formData.refdet && pay.MONTANT === formData.montant
+//   );
 
-  if (!findPayment) {
-    return res.status(404).json({ message: "Paiement non trouvé" });
-  }
+//   if (!findPayment) {
+//     return res.status(404).json({ message: "Paiement non trouvé" });
+//   }
 
-  return res.json({ ok: true, message: "Paiement vérifié" });
-};
+//   return res.json({ ok: true, message: "Paiement vérifié" });
+// };
 
-module.exports = { confirmation, redirection };
+module.exports = { notification, redirection };
 
 // NUMCLI: "083198",
 // EXER: "2024",
