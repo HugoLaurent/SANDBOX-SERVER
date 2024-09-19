@@ -4,10 +4,10 @@ const {
   getPayment,
   checkPayment,
   notification,
-  confirmation,
+  redirection,
 } = require("../controllers/paymentController");
 
 router.post("/notification", notification);
-router.post("/confirmation", confirmation);
+router.post("/redirection", redirection);
 
 module.exports = router;

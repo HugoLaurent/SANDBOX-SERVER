@@ -7,7 +7,7 @@ const confirmation = (req, res) => {
   res.json(payment);
 };
 
-const notification = (req, res) => {
+const redirection = (req, res) => {
   console.log("Je reçois la notification");
   res.send(`
     <html>
@@ -40,7 +40,7 @@ const checkPayment = (req, res) => {
   return res.json({ ok: true, message: "Paiement vérifié" });
 };
 
-module.exports = { confirmation, notification };
+module.exports = { confirmation, redirection };
 
 // NUMCLI: "083198",
 // EXER: "2024",
