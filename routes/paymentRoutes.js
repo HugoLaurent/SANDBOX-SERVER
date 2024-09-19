@@ -3,9 +3,11 @@ const router = express.Router();
 const {
   getPayment,
   checkPayment,
+  notification,
+  confirmation,
 } = require("../controllers/paymentController");
 
-router.post("/", getPayment);
-router.get("/check-payment", checkPayment);
+router.post("/notification", notification);
+router.post("/confirmation", confirmation);
 
 module.exports = router;

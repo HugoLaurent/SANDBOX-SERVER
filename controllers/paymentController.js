@@ -1,19 +1,16 @@
 const payment = require("../json/payfip.js");
 
-const getPayment = (req, res) => {
-  console.log("Je récupère les paiements");
-  res.send(`
-    <html>
-      <head>
-        <title>Payment Information</title>
-      </head>
-      <body>
-        <h1>Payment Details</h1>
-        <pre>${JSON.stringify(payment, null, 2)}</pre>
-      </body>
-    </html>
-  `);
+const confirmation = (req, res) => {
+  console.log("Je reçois la notification");
+  console.log(req.body);
+
   res.json(payment);
+};
+
+const notification = (req, res) => {
+  console.log("Je reçois la notification");
+  console.log(req.body);
+  res.json({ ok: true, message: "Notification reçue" });
 };
 
 const checkPayment = (req, res) => {
@@ -37,7 +34,7 @@ const checkPayment = (req, res) => {
   return res.json({ ok: true, message: "Paiement vérifié" });
 };
 
-module.exports = { getPayment, checkPayment };
+module.exports = { confirmation, notification };
 
 // NUMCLI: "083198",
 // EXER: "2024",
