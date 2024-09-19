@@ -5,7 +5,7 @@ const {
   checkPayment,
 } = require("../controllers/paymentController");
 
-router.get("/", getPayment);
+router.post("/", getPayment);
 router.get("/check-payment", checkPayment);
 
 module.exports = router;

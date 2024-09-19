@@ -1,6 +1,18 @@
 const payment = require("../json/payfip.js");
 
 const getPayment = (req, res) => {
+  console.log("Je récupère les paiements");
+  res.send(`
+    <html>
+      <head>
+        <title>Payment Information</title>
+      </head>
+      <body>
+        <h1>Payment Details</h1>
+        <pre>${JSON.stringify(payment, null, 2)}</pre>
+      </body>
+    </html>
+  `);
   res.json(payment);
 };
 
