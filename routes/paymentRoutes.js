@@ -7,7 +7,7 @@ const {
   redirection,
 } = require("../controllers/paymentController");
 
-router.post("/notification", notification);
+router.get("/notification", notification);
 router.post("/redirection", redirection);
 
 module.exports = router;
