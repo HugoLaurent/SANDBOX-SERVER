@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "username": "admin@admin.com",
+    "password": "$2a$10$NHTawu1BqoeEgrT.GSEOLet2h8iTEHrcamXtzorA0jdNTSjaJvqqG",
+    "mustCheckPassword": true,
+    "refreshToken": "toMakeItValid",
+    "lastLogin": "2024-08-12T14:30:00Z"
+  }
+]
