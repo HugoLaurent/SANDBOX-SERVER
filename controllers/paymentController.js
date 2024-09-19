@@ -13,6 +13,22 @@ const redirection = (req, res) => {
     <html>
       <body>
         <pre>${JSON.stringify(req.body, null, 2)}</pre>
+        <script></script>
+          const urlParams = new URLSearchParams(window.location.search);
+          const params = {
+            idop: urlParams.get('idop'),
+            NUMCLI: urlParams.get('NUMCLI'),
+            EXER: urlParams.get('EXER'),
+            REFDET: urlParams.get('REFDET'),
+            OBJET: urlParams.get('OBJET'),
+            MONTANT: urlParams.get('MONTANT'),
+            MEL: urlParams.get('MEL'),
+            URLNOTIF: urlParams.get('URLNOTIF'),
+            URLREDIRECT: urlParams.get('URLREDIRECT'),
+            SAISIE: urlParams.get('SAISIE')
+          };
+          console.log(params);
+        </script>
       </body>
     </html>
   `);
