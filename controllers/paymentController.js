@@ -4,14 +4,7 @@ const notification = (req, res) => {
   console.log("Je reçois la notification");
 
   // Afficher les paramètres de la requête (query, params)
-  console.log("Query params:", req.query);
-  console.log("Route params:", req.params);
-
-  // Vérifier et afficher les headers
-  console.log("Headers:", req.headers);
-
-  // Vérifier et afficher le body de la requête
-  console.log("Body:", req.body);
+  console.log("REQ LOGS:", req);
 
   res.send("Notification reçue");
 };
