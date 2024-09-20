@@ -2,7 +2,7 @@
   {
     "id": 1,
     "username": "admin@admin.com",
-    "password": "$2a$10$NHTawu1BqoeEgrT.GSEOLet2h8iTEHrcamXtzorA0jdNTSjaJvqqG",
+    "password": "$2a$10$/e3RRdnYOSz6psaI9G7Nbe.VsybVHNR5skhrBo6WPwG2s0nbM1jGO",
     "mustCheckPassword": true,
     "refreshToken": "toMakeItValid",
     "lastLogin": "2024-08-12T14:30:00Z"
