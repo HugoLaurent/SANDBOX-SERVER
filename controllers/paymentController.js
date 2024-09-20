@@ -2,7 +2,8 @@ const payment = require("../json/payfip.js");
 
 const notification = (req, res) => {
   console.log("Je reçois la notification");
-  console.log(req.query);
+  console.log(req);
+  res.send("Notification reçue");
 };
 
 const redirection = (req, res) => {
