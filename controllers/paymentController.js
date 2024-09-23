@@ -1,7 +1,10 @@
 const payment = require("../json/payfip.js");
 
 const notification = (req, res) => {
-  console.log(req.headers.idop);
+  console.log("notification", req.headers.idop);
+  console.log(req.body);
+  console.log(req.body.headers);
+
   setTimeout(() => {
     res.send(false);
   }, 5000);
@@ -9,6 +12,9 @@ const notification = (req, res) => {
 
 const redirection = (req, res) => {
   console.log("Je reçois la redirection");
+  console.log("redirection", req.headers.idop);
+  console.log(req.body);
+  console.log(req.body.headers);
 
   // Récupérer les paramètres de requête (req.query) côté serveur
   const params = {
@@ -19,16 +25,21 @@ const redirection = (req, res) => {
 
   // Envoyer les paramètres dans le HTML
   res.send(`
-    <html>
-      <body>
-        <h1>Redirection reçue avec les paramètres suivants :</h1>
-        <ul>
-          <li><strong>ID Operation (idop):</strong> ${params.idop}</li>
-          
-        </ul>
-        <pre>${JSON.stringify(params, null, 2)}</pre>
-      </body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Redirection</title>
+    </head>
+    <body>
+      <h1>Redirection</h1>
+      <p>Header IDOP: ${req.headers.idop}</p>
+      <p>Body: ${JSON.stringify(req.body)}</p>
+      <p>Body Headers: ${JSON.stringify(req.body.headers)}</p>
+    </body>
     </html>
+    
   `);
 };
 
