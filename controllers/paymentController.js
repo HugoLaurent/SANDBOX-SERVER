@@ -1,12 +1,10 @@
 const payment = require("../json/payfip.js");
 
 const notification = (req, res) => {
-  console.log("Je reçois la notification");
-
-  // Afficher les paramètres de la requête (query, params)
-  console.log("REQ LOGS:", req);
-
-  res.send("Notification reçue");
+  console.log(req.headers.idop);
+  setTimeout(() => {
+    res.send(false);
+  }, 5000);
 };
 
 const redirection = (req, res) => {
